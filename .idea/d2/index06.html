@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#mymodal-lg">lg</button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#mymodal-sm">sm</button>
+        <div class="modal" id="mymodal-lg">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                        <h3 class="modal-title">警告！</h3>
+                    </div>
+                    <div class="modal-body">
+                         <p>未满十八岁禁止入内</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">继续</button>
+                        <button type="button" class="btn btn-primary"  data-dismiss="modal">离开</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="mymodal-sm">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                        <h3 class="modal-title">警告！</h3>
+                    </div>
+                    <div class="modal-body">
+                         <p>未满十八岁禁止入内</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">继续</button>
+                        <button type="button" class="btn btn-primary"  data-dismiss="modal">离开</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn-primary btn" data-toggle="modal" data-target="#mymodal" data-whatever="@mdo">
+            姐首歌作为约腚
+        </button>
+        <div class="modal fade" id="mymodal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" type="button" data-dismiss="modal"><span>&times;</span></button>
+                        <h3 class="modal-title">警告！</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-group form-horizontal">
+                            <label class="control-label col-xs-2">whatever</label>
+                            <div class="col-xs-10"><input type="text" class="form-control"></div>
+                        </form>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="button">继续</button>
+                        <button class="btn btn-default" type="button" data-dismiss="modal">离开</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="jquery-3.2.1.min.js">
+    </script>
+    <script src="bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#mymodal").on("show.bs.modal",function(e){
+//        获得点击打开的按钮
+                    var button=$(e.relatedTarget)
+//        根据标签获得按钮传入的参数
+                    var recipient=button.text().trim();
+//        获得模态框本身
+                    var modal=$(this)
+//        更改将title的text
+                    modal.find(".modal-title").text("Hello"+recipient);
+//        更改body里input的值
+                    modal.find(".modal-body input").val(recipient)
+                })
+            })
+
+        </script>
+</body>
+</html>

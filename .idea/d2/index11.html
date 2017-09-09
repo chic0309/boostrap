@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <!--<p class="muted">-->
+            <!--欢迎来到极客学院-->
+            <!--<a href="" data-toggle="tooltip" data-placement="left" data-original-title="www.jikexueyuan.com" data-animation="true">jikexueyuan</a>-->
+        <!--</p>-->
+        <button type="button" data-placement="bottom" class="btn btn-default js-popover" title="标题" data-content="这里是弹出款">弹出款</button>
+    </div>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script>
+//        $("[data-toggle=tooltip]").tooltip()
+        $(".js-popover").popover();
+        $(".js-popover").popover();
+    </script>
+
+</body>
+</html>
